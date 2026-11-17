@@ -50,14 +50,23 @@
         .empty-state strong{display:block;color:#365448;font-size:15px;margin-bottom:7px}
         .panel-footer{display:flex;justify-content:space-between;gap:14px;align-items:center;padding:17px 28px;background:#fbfcfa;color:#82958a;font-size:12px;border-top:1px solid #edf1ed}
         .footer-note{margin:22px 0 0;color:#8b9b91;font-size:12px;line-height:1.6}
-        @media(max-width:700px){.topbar-inner,.container{width:calc(100% - 32px)}.topbar-inner{min-height:66px}.top-label{display:none}.container{padding:40px 0}.panel-header{align-items:flex-start;flex-direction:column;padding:22px}.search{width:100%}.search input{width:auto;flex:1;min-width:120px}th,td{padding:16px 20px}.panel-footer{padding:16px 20px;align-items:flex-start;flex-direction:column}}
+        .navigation{display:flex;align-items:center;gap:5px}.navigation a{padding:9px 13px;border-radius:8px;color:#d2e2db;font-size:13px;font-weight:700;text-decoration:none}.navigation a:hover,.navigation a[aria-current="page"]{background:#28574d;color:#fff}
+        .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+        .page-heading{display:flex;align-items:end;justify-content:space-between;gap:24px}.button{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 17px;border:1px solid transparent;border-radius:9px;font:inherit;font-size:14px;font-weight:750;text-decoration:none;cursor:pointer;white-space:nowrap}.button-primary{background:#245f4e;color:#fff}.button-primary:hover{background:#194c3e}.button-secondary{background:#fff;border-color:#d9e3db;color:#36594d}.button:disabled{cursor:not-allowed;opacity:.5}
+        .product-count{color:#72887c;font-size:13px;font-weight:700}.actions{display:flex;align-items:center;gap:14px}.actions form{margin:0}.action-link,.action-delete{border:0;background:none;padding:3px 0;font:inherit;font-size:13px;font-weight:700;cursor:pointer;text-decoration:none}.action-link{color:#24644d}.action-delete{color:#ad5145}.action-link:hover,.action-delete:hover{text-decoration:underline}
+        .flash{margin:0 0 24px;padding:14px 17px;border:1px solid;border-radius:10px;font-size:14px;line-height:1.5}.flash-success{background:#eef9ef;border-color:#cde8d1;color:#24633e}.flash-error{background:#fff5f1;border-color:#f1d3c9;color:#9e3f30}
+        .back-link{display:block;width:fit-content;margin-bottom:26px;color:#39705a;font-size:13px;font-weight:700;text-decoration:none}.back-link:hover{text-decoration:underline}.form-panel{max-width:790px;padding:30px}.field-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}.field{min-width:0}.field-wide{grid-column:1/-1}.field label{display:block;margin-bottom:8px;color:#345348;font-size:13px;font-weight:750}.field input,.field select{width:100%;min-height:45px;padding:10px 12px;border:1px solid #d9e3db;border-radius:9px;background:#fff;color:#203a32;font:inherit;font-size:14px}.field input:focus,.field select:focus{outline:none;border-color:#589879;box-shadow:0 0 0 3px #e1f2e5}.field [aria-invalid="true"]{border-color:#c66758}.field-hint{display:block;margin-top:7px;color:#83958b;font-size:12px}.field-error{display:block;margin-top:7px;color:#a13c28;font-size:13px}.form-actions{display:flex;gap:10px;margin-top:30px;padding-top:24px;border-top:1px solid #edf1ed}
+        @media(max-width:700px){.topbar-inner,.container{width:calc(100% - 32px)}.topbar-inner{min-height:66px;flex-wrap:wrap;padding:12px 0}.navigation{margin-left:auto}.navigation a{padding:8px;font-size:12px}.container{padding:40px 0}.page-heading{align-items:flex-start;flex-direction:column}.panel-header{align-items:flex-start;flex-direction:column;padding:22px}.search{width:100%}.search input{width:auto;flex:1;min-width:120px}th,td{padding:16px 20px}.panel-footer{padding:16px 20px;align-items:flex-start;flex-direction:column}.form-panel{padding:22px}.field-grid{grid-template-columns:1fr}.field-wide{grid-column:auto}}
     </style>
 </head>
 <body>
     <header class="topbar">
         <div class="topbar-inner">
             <a class="brand" href="{{ route('katalog.index') }}"><span class="brand-mark" aria-hidden="true">✳</span> Kasir Toko</a>
-            <span class="top-label">KATALOG PRODUK</span>
+            <nav class="navigation" aria-label="Navigasi utama">
+                <a href="{{ route('katalog.index') }}" @if (request()->routeIs('katalog.*')) aria-current="page" @endif>Katalog</a>
+                <a href="{{ route('produk.index') }}" @if (request()->routeIs('produk.*')) aria-current="page" @endif>Kelola produk</a>
+            </nav>
         </div>
     </header>
     <main class="container">
