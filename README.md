@@ -2,12 +2,14 @@
 
 Contoh katalog toko sekolah yang membaca data dari database, disusun berdasarkan [materi Hari 8: Database, Migration, Model dan Eloquent](https://docs.google.com/presentation/d/1vBXAfxh3fZwoVKlrkMomu94uBzNuhdVC32pLl3VTJsc/edit?usp=sharing). Targetnya adalah mengenal koneksi MySQL/MariaDB, migration, seeder, model, relasi, Eloquent, dan Blade. CRUD produk serta pembayaran belum termasuk materi hari ini.
 
+Untuk kelanjutan materi CRUD produk Hari 9 yang sudah ada di proyek ini, lihat [Catatan demo Hari 9](CATATAN_DEMO_HARI_9.md).
+
 ## Menjalankan di VS Code dev container
 
 1. Buka proyek template di dev container dan pastikan service `app` serta `db` (MariaDB) aktif. Buka terminal **di dalam container aplikasi**, lalu masuk ke folder proyek:
 
    ```sh
-   cd /workspace/Praktik_Hari_8/kasir-h8
+   cd /workspace/Praktik_Hari_9/kasir-h8
    php -v
    composer -V
    php -m | grep pdo_mysql
